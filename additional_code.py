@@ -1,3 +1,59 @@
+#추가 실습 코드
+
+#딕셔너리 값의 평균 계산하기
+
+def calculate_average_from_dict(student_scores):
+    values = student_scores.values()
+    return sum(values) / len(values)
+
+student_scores = {"김인하": 92, "이인하": 85, "박인하": 78}
+avg_score = calculate_average_from_dict(student_scores)
+print(f"평균 점수: {avg_score:.2f}")
+
+#리스트에서 특정 값 지우기
+def remove_value(numbers, value_to_remove):
+    for i, num in enumerate(numbers): #인덱스, 요소
+        if num == value_to_remove:
+            del numbers[i]
+    return numbers
+
+#리스트 컴프리헨션(꼭 숙지 할 것)
+#def remove_value(numbers, value_to_remove):
+#    return [num for num in numbers if num != value_to_remove]
+
+numbers = [1, 2, 3, 2, 4, 2, 5]
+
+value_to_remove = 2
+updated_list = remove_value(numbers, value_to_remove)
+print(f"제거 후 리스트: {updated_list}")
+
+
+
+
+#리스트의 중복 항목 개수 세기
+def count_duplicates(numbers):
+    dup_dict = dict()
+    for num in numbers:
+        if num not in dup_dict:
+            dup_dict[num] = 1
+        else:
+            dup_dict[num] += 1
+
+    for num in numbers:
+        if dup_dict[num] == 1:
+            del dup_dict[num]
+
+    return dup_dict
+
+numbers = [1,2,3,2,4,2,5,3]
+duplicate_counts = count_duplicates(numbers)
+#더 좋은 코드
+#딕셔너리 컴프리헨션(꼭 숙지 할 것)
+#dup_dict = {num: numbers.count(num) for num in set(numbers)}
+print(f"중복 항목: {duplicate_counts}")
+
+
+
 #참고 코드
 
 #리스트를 함수에서 수정
