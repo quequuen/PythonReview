@@ -1,3 +1,41 @@
+#week04_01.py
+motorcycles = ["daelim", "bmw", "yamaha",
+               "suzuki", "vespa"]
+
+#a = del morotcycles[0]
+#추출 불가능! del은 순수하게 요소 삭제만을 행함.
+
+popdata = motorcycles.pop()
+print(popdata)
+print(motorcycles)
+#맨 뒤의 요소를 뽑아냄
+
+motorcycles.remove("yamaha")
+print(motorcycles)
+#요소를 비교해서 삭제
+
+popdata = motorcycles.pop(1)
+print(popdata)
+print(motorcycles)
+
+cars = ["audi", "tesla", "benz", "kia", "lincoln", "hyndai"]
+#순서를 반전함.
+#값이 아님.(원본을 손상함)
+
+cars.reverse()
+print(cars)
+
+cars_copy = cars[:]
+cars_copy.reverse()
+#원래는 이런 식으로 reverse함(원본 보호)
+
+cars_copy = sorted(cars, reverse = True)    #내림차순(역방량, desc)으로 정렬
+print(cars_copy)
+#정렬을 했으니까 당연히 cars랑 다르게 나오지~
+
+
+
+
 #week03_04.py
 test = "   JMT University   "
 
