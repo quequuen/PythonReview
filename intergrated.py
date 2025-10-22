@@ -1,3 +1,68 @@
+#range 응용
+scores = [100, 90, 75]
+for i in range(len(scores)): #range 안에는 숫자만 들어갈 수 있음.
+    print(f"{i+1} : {scores[i]}")
+
+#리스트 내포
+scores = [10, 20, 15]
+offset = []
+for score in scores:
+    if score <= 15:
+        offset.append(score/2)
+
+offset = []
+#offset1 = [for score in scores]     #나오는 value 값을 정의해주지 않으면 안됨
+offset2 = [score for score in scores]
+offset3 = [score / 2 for score in scores]
+offset4 = [score // 2 for score in scores if score <= 15]
+
+#print(offset1)
+print(offset2)
+print(offset3)
+print(offset4)
+
+# ** 가변 매개변수
+def test(a, b, **kwargs): #dictionary로 들어옴
+    #print(type(kwargs))
+    print(kwargs)
+    print(a, b)
+    print(kwargs.get("loc", "-"))
+    print(kwargs.get("field","-"))
+
+test("kim", "inha", loc = "incheon")
+test("lee", "younghyun", loc = "seoul")
+test("park", "jungsuk", hobby = "song")
+
+
+# *가변매개변수
+def calc(choice, *args): #tuple로 들어옴
+    print(type(args))
+    print(args)
+    if choice.lower() == "a":
+        result = 0
+        for i in args: result += i
+    elif choice.lower() == "m":
+        result = 1
+        for i in args: result *= i
+    else:
+        return None
+    return result
+
+
+a = calc("a", 1, 2)
+b = calc("m", 1, 2)
+c = calc("d", 1, 2)
+print(a, b, c)
+
+#tuple
+a = (1,2,['3','4'])
+b = a[2]
+
+print(b)
+#tuple은 요소값을 삭제류(del)하거나 재할당할 때 오류
+#튜플은 요솟값을 변경할수 없기 때문에 sort, insert, remove, pop과 같은 내장 함수가 없다.
+
+
 #week04_01.py
 motorcycles = ["daelim", "bmw", "yamaha",
                "suzuki", "vespa"]
