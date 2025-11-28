@@ -1,3 +1,7 @@
+data2 = [1,2,3,["a", "b","c"]]
+print(type(data2[-1]))
+print(data2[3][1], type(data2[3][1]))
+
 #추가 실습 코드
 
 #딕셔너리 값의 평균 계산하기

@@ -28,7 +28,7 @@ tuple_4 = "1",2, 3.3
 tuple_5 = ("1", (2, 3.3))
 
 print(tuple_1)
-print(tuple_2)
+print(type(tuple_2))
 print(tuple_3)
 print(tuple_no)
 print(tuple_4)

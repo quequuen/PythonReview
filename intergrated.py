@@ -1,3 +1,5 @@
+print(" ".upper())
+
 #range 응용
 scores = [100, 90, 75]
 for i in range(len(scores)): #range 안에는 숫자만 들어갈 수 있음.
